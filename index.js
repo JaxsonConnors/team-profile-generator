@@ -45,7 +45,7 @@ async function promptUser() {
           {
             type: "input",
             name: "id",
-            message: "Enter the employee's ID: ",
+            message: "What is the employee's ID: ",
             validate: function validateName(name){
               return name !== '';
             }
@@ -53,7 +53,7 @@ async function promptUser() {
           {
             type: "input",
             name: "email",
-            message: "Enter the employee's email address: ",
+            message: "What is the employee's email address: ",
             validate: function validateEmail(name){
               return name !== '';
             }
