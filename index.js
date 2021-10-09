@@ -11,17 +11,15 @@ const writeFileAsync = util.promisify(fs.writeFile);
 let teamArray = [];
 let teamString = ``;
 
-async function main() {
+async function app() {
   try {
       await promptUser()
 
       for(let i = 0; i < teamArray.length; i++) {
-          teamString = teamString + html.generateEmpCard(teamArray[i]);
+          teamString = teamString + template.generateEmpCard(teamArray[i]);
       }
 
-      let finalHtml = html.generateHTML(teamString)
-
-      writeFileAsync("./dist/index.html", finalHtml);
+      writeFileAsync("./dist/index.html", template.generateHTML(teamString));
 
       console.log("index.html file created successfully");
 
@@ -131,4 +129,4 @@ async function promptUser() {
    
 }
  
-promptUser();
+app();
