@@ -28,14 +28,14 @@ const generateHTML = function (teamString) {
 
 const generateEmpCard = function (arr) {
 
-    let roleInfo;
+    let role;
     
     if (arr.title === "Manager") {
-        roleInfo = `Office Number: ${arr.officeNumber}`
+        role = `Office Number: ${arr.officeNumber}`
     } else if (arr.title === "Engineer") {
-        roleInfo = `GitHub Username: <a href="https://github.com/${arr.github}" target="_blank">${arr.github}</a>`
+        role = `GitHub Username: <a href="https://github.com/${arr.github}" target="_blank">${arr.github}</a>`
     } else if (arr.title === "Intern") {
-        roleInfo = `School: ${arr.school}`
+        role = `School: ${arr.school}`
     }
     
     return `      
@@ -49,7 +49,7 @@ const generateEmpCard = function (arr) {
                     <ul class="list-unstyled">
                         <li>Employee ID: ${arr.id}</li>
                         <li>Email: <a href="mailto:${arr.email}">${arr.email}</a></li>
-                        <li>${roleInfo}</li>
+                        <li>${role}</li>
                     </ul>
                 </div>
             </div>
